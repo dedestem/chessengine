@@ -71,14 +71,14 @@ function handleSquareClick(event) {
     }
 }
 
-// AI Move using Stockfish
+// AI Move using Stockfish.js (no WebAssembly)
 function aiMove() {
     if (game.game_over()) {
         gameStatusElement.textContent = "Game Over!";
         return;
     }
 
-    const stockfish = new Worker('https://cdnjs.cloudflare.com/ajax/libs/stockfish/11.1.0/stockfish.js');
+    const stockfish = Stockfish();  // Create a new Stockfish instance
     stockfish.postMessage("uci");
 
     stockfish.onmessage = function (event) {
