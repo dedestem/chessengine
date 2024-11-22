@@ -1,3 +1,50 @@
-p {
-  color: orange;
+:root {
+  --square-white: white;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+
+  font-family: sans-serif;
+
+  background-color: black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 0;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.square:nth-child(even) {
+  background-color: #f0d9b5;
+}
+
+.square:nth-child(odd) {
+  background-color: #b58863;
+}
+
+.square:hover {
+  background-color: #ddd;
 }
